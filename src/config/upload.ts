@@ -10,6 +10,7 @@ export default {
 
   storage: multer.diskStorage({
     destination: tmpFolder,
+    // eslint-disable-next-line no-shadow
     filename(request, file, callback) {
       const fileHash = crypto.randomBytes(10).toString('hex');
       const fileName = `${fileHash}-${file.originalname}`;
